@@ -11,7 +11,6 @@ class LeftDrawer extends StatelessWidget {
       child: ListView(
         children: [
           const DrawerHeader(
-            // TODO: Bagian drawer header
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -28,7 +27,6 @@ class LeftDrawer extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Text("Seluruh berita sepak bola terkini di sini!",
-                    // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
@@ -39,7 +37,6 @@ class LeftDrawer extends StatelessWidget {
               ],
             ),
           ),
-          // TODO: Bagian routing
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
@@ -64,8 +61,17 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
-          // TODO: Buat ListTile baru untuk ke halaman melihat news
-          
+          ListTile(
+            leading: const Icon(Icons.newspaper),
+            title: const Text('See News'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewsListPage(),
+                  ));
+            },
+          ),
         ],
       ),
     );
